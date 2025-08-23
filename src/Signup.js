@@ -12,7 +12,7 @@ const Signup = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/auth/register', { username, password });
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/auth/login`, { username, password });
       toast.success('Registration successful! You can log in now.');
       setUsername('');
       setPassword('');
