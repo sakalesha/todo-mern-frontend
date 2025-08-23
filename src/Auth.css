@@ -1,0 +1,85 @@
+/* Auth form container */
+.auth-container {
+  max-width: 350px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Heading */
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form styling */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Buttons */
+.auth-container button {
+  padding: 0.75rem 1rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Switch auth mode links */
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.auth-container p button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.auth-container p button:hover {
+  color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 2rem 1rem;
+  }
+}

@@ -1,38 +1,146 @@
-.App {
+/* frontend/src/App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 600px; /* increased width for better desktop view */
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
   text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 1.25rem;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  background: #007bff;
   color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+li span {
+  flex-grow: 1;
+  cursor: pointer;
+  word-break: break-word;
+  font-size: 1rem;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li button {
+  background: #dc3545;
+  border-radius: 4px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+li button:hover {
+  background: #a71d2a;
+}
+
+/* Timestamp styling */
+li span.timestamp {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem 1rem;
+    margin: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  form {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    width: 100% !important;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+
+  button {
+    width: 100% !important;
+    border-radius: 4px;
+    margin-left: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li button {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  li span.timestamp {
+    margin-left: 0;
+    margin-top: 0.3rem;
+    font-size: 0.75em !important;
   }
 }
