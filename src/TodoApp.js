@@ -3,6 +3,7 @@ import axios from 'axios';
 import { AuthContext } from './AuthContext';
 import { toast } from 'react-toastify';
 import './App.css';
+import VersionDisplay from './VersionDisplay';
 
 function TodoApp() {
   const { user, logout } = useContext(AuthContext);
@@ -12,6 +13,7 @@ function TodoApp() {
   const [editText, setEditText] = useState('');
   const [filter, setFilter] = useState('all'); // all, completed, incomplete
   const [loading, setLoading] = useState(false);
+  const [backendVersion, setBackendVersion] = useState('');
 
   // Axios instance with auth header
   const axiosInstance = axios.create({
@@ -113,6 +115,12 @@ function TodoApp() {
       toast.error('Error deleting todo. Please check your connection.');
     }
   };
+
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/version`)
+      .then(res => setBackendVersion(res.data.version))
+      .catch(() => setBackendVersion('Unavailable'));
+  }, []);
 
   return (
     <div className="container">
@@ -217,6 +225,8 @@ function TodoApp() {
             </li>
           ))}
       </ul>
+
+      <VersionDisplay />
     </div>
   );
 }
